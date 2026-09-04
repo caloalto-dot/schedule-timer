@@ -1,0 +1,20 @@
+[
+  {
+    "id": "e71fb33d-494f-417d-890d-0afb6b19e4fb",
+    "title": "TWM 미팅",
+    "targetTime": 1788498000000,
+    "url": "https://meet.google.com/btg-yquj-ghy"
+  },
+  {
+    "id": "0251c0bf-3ea2-4a4b-b4fa-1d98d51e5594",
+    "title": "30 Minute Meeting with Taku Tanaka",
+    "targetTime": 1788505200000,
+    "url": "https://calendly.com/events/33eee2cf-c603-4945-be56-c86e4056fbd2/google_meet"
+  },
+  {
+    "id": "72b326e8-93ec-44e6-be46-f55b8123e83f",
+    "title": "파트너십 파트 점검",
+    "targetTime": 1788507000000,
+    "url": "https://meet.google.com/nwr-espm-pmf"
+  }
+]
