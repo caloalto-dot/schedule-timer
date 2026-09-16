@@ -1,0 +1,31 @@
+name: Apply mobile spacing
+on:
+  push:
+    paths:
+      - '.github/workflows/mobile-spacing.yml'
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add 15px mobile title/countdown spacing
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          old='.card h2{margin:12px 14px}.count{font-size:clamp(42px,15vw,100px)}'
+          new='.card h2{margin:12px 14px}.center{padding-top:35px}.count{font-size:clamp(42px,15vw,100px)}'
+          if old not in s:
+              raise SystemExit('target CSS not found')
+          p.write_text(s.replace(old,new,1))
+          PY
+      - name: Commit change
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Add 15px mobile spacing between title and countdown'
+          git push
